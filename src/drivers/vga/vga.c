@@ -1,5 +1,4 @@
-#include "../../cpu/io.h"
-
+#include "vga.h"
 #define VGA_WIDTH 80
 
 void enable_cursor(uint8_t cursor_start, uint8_t cursor_end) {
@@ -19,3 +18,7 @@ void update_cursor(int x, int y) {
 	outb(0x3D5, (uint8_t) ((pos >> 8) & 0xFF));
 }
 
+void disable_cursor() {
+  outb(0x3D4, 0x0A);
+  outb(0x3D5, 0x20);
+}
