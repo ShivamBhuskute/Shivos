@@ -24,7 +24,8 @@ setGdt:
 .global reloadSegments
 reloadSegments:
 
-    ljmp $0x08, $.reload_CS  /* new value into cs register is 0x08 and 2nd arg loads address fo next instruction into eip and it starts executing from that instruction 							   here that is movw ($0x10, %ax)*/
+    ljmp $0x08, $.reload_CS  /* new value into cs register is 0x08 and 2nd arg loads address fo next instruction into eip and it starts executing from that instruction
+	here that is movw ($0x10, %ax)*/
 .reload_CS:
     movw $0x10, %ax
 

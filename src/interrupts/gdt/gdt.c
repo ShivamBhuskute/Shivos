@@ -62,7 +62,7 @@ void gdt_init(void) {
 	encodeGdtEntry(gdt_table[4], descriptor);
 
 
-	// will implwmnt task state management later
+	// ill will implwmnt task state management later
 
     // 4. CALL YOUR ASSEMBLY FUNCTIONS!
     setGdt(sizeof(gdt_table) - 1, (uint32_t)&gdt_table);
